@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      :root {
+        --sameHeight-height: 100px;
+      }
+      #header {
+        background-color: tomato;
+        height: var(--sameHeight-height);
+        position: relative;
+      }
+      .nav {
+        position: absolute;
+        top: 30%;
+        left: 5%;
+        display: flex;
+      }
+      .nav__item {
+        background-color: #fff;
+        color: #000;
+        margin-left: 24px;
+        padding: 6px;
+        list-style-type: none;
+      }
+      #container {
+        display: flex;
+        min-height: 500px;
+      }
+      .container-left {
+        background-color: rgb(203, 235, 235);
+        flex-basis: 20%;
+      }
+      .container-center {
+        flex-basis: 60%;
+        background-color: thistle;
+        padding: 32px 20px;
+      }
+      .list-request {
+        list-style-type: auto;
+        padding: 24px 40px;
+      }
+      .list-request__item + .list-request__item {
+        padding-top: 2px;
+      }
+      .container-right {
+        background-color: wheat;
+        flex-basis: 20%;
+      }
+      #footer {
+        background-color: yellowgreen;
+        height: var(--sameHeight-height);
+      }
+      @media (max-width: 500px) {
+        #container {
+          display: block;
+          height: 100%;
+        }
+        .container-right,
+        .container-center,
+        .container-left {
+          flex-basis: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header -->
+    <header id="header">
+      <ul class="nav">
+        <li class="nav__item">Logo</li>
+        <li class="nav__item">Home</li>
+        <li class="nav__item">About</li>
+        <li class="nav__item">Project</li>
+        <li class="nav__item">Contact</li>
+      </ul>
+    </header>
+    <!-- Container -->
+    <div id="container">
+      <div class="container-left">Đây là nội dung bên trái</div>
+      <div class="container-center">
+        <p class="container-center__start">
+          Học viên làm bài test trong 30 phút. Yêu cầu:
+        </p>
+        <ul class="list-request">
+          <li class="list-request__item">
+            Tạo giao diện theo mẫu (chú ý CSS các phần như menu, pading,
+            margin...)
+          </li>
+          <li class="list-request__item">
+            Responsive giao diện khi max-width = 500px thì khối "Đây là nội dung
+            bên trái", content ở giữa và "Đây là nội dung bên phải chiếm 100%
+            width màn hình"
+          </li>
+          <li class="list-request__item">
+            Đưa lên GitHub và gửi link theo mẫu của giảng viên bào
+            <a
+              href="https://docs.google.com/spreadsheets/d/1U5oLvbfKgl7FY4OL9rfao649sdxhbHVSby80UdzEYVw/edit"
+              >đây</a
+            >
+          </li>
+        </ul>
+        <p class="container-center__final">Chúc các bạn làm bài tốt!</p>
+      </div>
+      <div class="container-right">Đây là nội dung bên phải</div>
+    </div>
+    <!-- Footer -->
+    <footer id="footer">
+      <div class="footer-content">Đây là footer</div>
+    </footer>
+  </body>
+</html>
